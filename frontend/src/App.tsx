@@ -30,7 +30,14 @@ export default function App() {
         <button
           id="dark-mode-toggle"
           onClick={toggleDarkMode}
-          className="bg-slate-200 text-3xl text-black px-1 h-12 w-12 rounded-xl dark:bg-slate-500 dark:text-slate-100"
+          className="
+            bg-slate-200
+            dark:bg-slate-500
+            text-3xl text-black
+            dark:text-slate-100
+            h-12 w-12 rounded-xl px-1
+            dark:pb-2
+          "
         >
           {isDarkMode ? "☼" : "☽"}
         </button>
