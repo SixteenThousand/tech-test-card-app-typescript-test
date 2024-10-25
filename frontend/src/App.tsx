@@ -32,10 +32,10 @@ export default function App() {
           onClick={toggleDarkMode}
           className="
             absolute top-3 right-3
-            bg-gray-300
-            dark:bg-gray-500
+            bg-gray-light
+            dark:bg-gray-dark
             text-3xl text-black
-            dark:text-gray-200
+            dark:text-gray-vlight
             h-12 w-12 rounded-md px-1
             dark:pb-2
           "
