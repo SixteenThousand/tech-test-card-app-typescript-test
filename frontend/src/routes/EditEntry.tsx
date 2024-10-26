@@ -33,7 +33,7 @@ export default function EditEntry() {
       "
     >
       <input
-        className="p-3 rounded-md dark:bg-gray-light"
+        className="p-3 rounded-md dark:bg-gray-vdark dark:text-gray-vlight"
         type="text"
         placeholder="Title"
         name="title"
@@ -41,14 +41,14 @@ export default function EditEntry() {
         onChange={handleInputChange}
       />
       <textarea
-        className="p-3 rounded-md dark:bg-gray-light"
+        className="p-3 rounded-md dark:bg-gray-vdark dark:text-gray-vlight"
         placeholder="Description"
         name="description"
         value={newEntry.description}
         onChange={handleInputChange}
       />
       <input
-        className="p-3 rounded-md dark:bg-gray-light"
+        className="p-3 rounded-md dark:bg-gray-vdark dark:text-gray-vlight"
         type="date"
         name="created_at"
         value={new Date(newEntry.created_at).toISOString().split("T")[0]}

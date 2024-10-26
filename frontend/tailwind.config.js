@@ -10,7 +10,7 @@ module.exports = {
         // gray-500
         "gray-dark": "#6b7280",
         // gray-950
-        "gray-vdark": "#030712",
+        "gray-vdark": "#111827",
         // blue-400
         "blue-light": "#60a5fa",
         // blue-600

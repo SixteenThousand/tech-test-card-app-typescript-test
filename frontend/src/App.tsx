@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <div className={isDarkMode ? "dark" : "light"}>
-      <section className="bg-white h-screen w-screen dark:bg-black">
+      <section className="bg-white h-screen w-screen dark:bg-gray-vdark">
         <Router>
           <EntryProvider>
             <NavBar></NavBar>
