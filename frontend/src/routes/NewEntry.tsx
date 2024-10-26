@@ -17,9 +17,16 @@ export default function NewEntry() {
     setNewEntry(emptyEntry);
   };
   return (
-    <section className="flex justify-center flex-col w-fit ml-auto mr-auto mt-10 gap-5 bg-gray-light dark:bg-gray-dark p-8 rounded-md">
+    <section
+      className="
+        flex justify-center flex-col w-fit
+        ml-auto mr-auto mt-10 gap-5 p-8 
+        rounded-md
+        bg-gray-light dark:bg-gray-dark
+      "
+    >
       <input
-        className="p-3 rounded-md"
+        className="p-3 rounded-md dark:bg-gray-vdark text-gray-vlight"
         type="text"
         placeholder="Title"
         name="title"
@@ -27,14 +34,14 @@ export default function NewEntry() {
         onChange={handleInputChange}
       />
       <textarea
-        className="p-3 rounded-md"
+        className="p-3 rounded-md dark:bg-gray-vdark text-gray-vlight"
         placeholder="Description"
         name="description"
         value={newEntry.description}
         onChange={handleInputChange}
       />
       <input
-        className="p-3 rounded-md"
+        className="p-3 rounded-md dark:bg-gray-vdark text-gray-vlight"
         type="date"
         name="created_at"
         value={new Date(newEntry.created_at).toISOString().split("T")[0]}
@@ -44,7 +51,12 @@ export default function NewEntry() {
         onClick={(e) => {
           handleSend(e);
         }}
-        className="bg-blue-light dark:bg-blue-dark hover:bg-blue-alt dark:hover:bg-blue-alt font-semibold text-white p-3 rounded-md"
+        className="
+          bg-blue-light dark:bg-blue-dark
+          hover:bg-blue-alt dark:hover:bg-blue-alt
+          font-semibold text-white
+          p-3 rounded-md
+        "
       >
         Create
       </button>
