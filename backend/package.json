@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node ./src/app.ts",
-    "dev": "nodemon -e ts,prisma,sql ./src/app.ts",
-    "test": "jest --testPathPattern=test/",
-    "prisma-setup": "prisma migrate dev && prisma generate"
+    "dev": ". ./.env.development && nodemon -e ts,prisma,sql ./src/app.ts",
+    "test": ". ./.env.test && jest --testPathPattern=test/",
+    "prisma-setup": ". ./.env.development && prisma migrate dev && prisma generate",
+    "prisma-test-setup": ". ./.env.test && prisma migrate dev && prisma generate"
   },
   "keywords": [],
   "author": "",

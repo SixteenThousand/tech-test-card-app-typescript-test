@@ -1,0 +1,4 @@
+prisma/database.db
+prisma/database.db-journal
+prisma/database.test.db
+prisma/database.test.db-journal
