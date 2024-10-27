@@ -21,19 +21,22 @@ beforeEach(async () => {
       title: "Shed",
       description: "Needs to be cleaned out",
       created_at: new Date("2024-09-15"),
+      due_at: new Date("2024-10-01"),
     },
     {
       title: "Cook soup",
       description: "Cook a big bowl of leek soup & freeze it",
       created_at: new Date("2024-10-02"),
+      due_at: new Date("2024-11-02"),
     },
     {
       title: "Seeding",
       description: "Finish writing the database seeding script for my new app",
       created_at: new Date("2024-10-24"),
+      due_at: new Date("2024-10-28"),
     },
   ];
-  // Prisma 3 does not support createMany for sqlite
+  // Prisma 3 does not support createMany for sqlite, hence the for loop
   for (const entry of seeds) {
     await Prisma.entry.create({ data: entry });
   }
