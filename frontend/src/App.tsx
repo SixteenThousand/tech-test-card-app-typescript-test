@@ -7,9 +7,7 @@ import NewEntry from "./routes/NewEntry";
 import { EntryProvider } from "./utilities/globalContext";
 
 export default function App() {
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("isDarkMode") ? localStorage.getItem("isDarkMode") : false
-  );
+  const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem("isDarkMode") === "true");
   function toggleDarkMode() {
     setIsDarkMode((currentMode) => {
       const newMode = !currentMode;
