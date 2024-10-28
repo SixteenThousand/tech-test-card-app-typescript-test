@@ -22,9 +22,24 @@ export default function App() {
         className="
           bg-white dark:bg-gray-vdark
           text-black dark:text-gray-vlight
-          h-screen w-screen
+          h-fit min-h-screen w-screen
         "
       >
+        <button
+          id="dark-mode-toggle"
+          onClick={toggleDarkMode}
+          className="
+            relative m-3
+            md:absolute md:top-3 md:right-3 md:m-0
+            bg-gray-light dark:bg-gray-dark
+            text-black dark:text-white
+            text-3xl
+            h-12 w-12 rounded-md px-1
+            dark:pb-2
+          "
+        >
+          {isDarkMode ? "☼" : "☽"}
+        </button>
         <Router>
           <EntryProvider>
             <NavBar></NavBar>
@@ -35,20 +50,6 @@ export default function App() {
             </Routes>
           </EntryProvider>
         </Router>
-        <button
-          id="dark-mode-toggle"
-          onClick={toggleDarkMode}
-          className="
-            absolute top-3 right-3
-            bg-gray-light dark:bg-gray-dark
-            text-black dark:text-white
-            text-3xl
-            h-12 w-12 rounded-md px-1
-            dark:pb-2
-          "
-        >
-          {isDarkMode ? "☼" : "☽"}
-        </button>
       </section>
     </div>
   );
