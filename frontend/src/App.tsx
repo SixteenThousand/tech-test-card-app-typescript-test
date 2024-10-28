@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import AllEntries from "./routes/AllEntries";
@@ -7,10 +7,14 @@ import NewEntry from "./routes/NewEntry";
 import { EntryProvider } from "./utilities/globalContext";
 
 export default function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("isDarkMode") ? localStorage.getItem("isDarkMode") : false
+  );
   function toggleDarkMode() {
     setIsDarkMode((currentMode) => {
-      return !currentMode;
+      const newMode = !currentMode;
+      localStorage.setItem("isDarkMode", newMode);
+      return newMode;
     });
   }
 
