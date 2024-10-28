@@ -5,7 +5,7 @@ import { EntryContext } from "../utilities/globalContext";
 
 export default function EditEntry() {
   const { id } = useParams();
-  const emptyEntry: Entry = { title: "", description: "", created_at: new Date() };
+  const emptyEntry: Entry = { title: "", description: "", created_at: new Date(), due_at: new Date() };
 
   const { updateEntry, entries } = useContext(EntryContext) as EntryContextType;
   const [newEntry, setNewEntry] = useState<Entry>(emptyEntry);
@@ -32,28 +32,47 @@ export default function EditEntry() {
         bg-gray-light dark:bg-gray-dark
       "
     >
-      <input
-        className="p-3 rounded-md dark:bg-gray-vdark"
-        type="text"
-        placeholder="Title"
-        name="title"
-        value={newEntry.title}
-        onChange={handleInputChange}
-      />
-      <textarea
-        className="p-3 rounded-md dark:bg-gray-vdark"
-        placeholder="Description"
-        name="description"
-        value={newEntry.description}
-        onChange={handleInputChange}
-      />
-      <input
-        className="p-3 rounded-md dark:bg-gray-vdark"
-        type="date"
-        name="created_at"
-        value={new Date(newEntry.created_at).toISOString().split("T")[0]}
-        onChange={handleInputChange}
-      />
+      <div>
+        <p className="font-semibold">Title</p>
+        <input
+          className="p-3 rounded-md dark:bg-gray-vdark"
+          type="text"
+          placeholder="Title"
+          name="title"
+          value={newEntry.title}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div>
+        <p className="font-semibold">Description</p>
+        <textarea
+          className="p-3 rounded-md dark:bg-gray-vdark"
+          placeholder="Description"
+          name="description"
+          value={newEntry.description}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div>
+        <p className="font-semibold">Creation Date</p>
+        <input
+          className="p-3 w-full rounded-md dark:bg-gray-vdark"
+          type="date"
+          name="created_at"
+          value={new Date(newEntry.created_at).toISOString().split("T")[0]}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div>
+        <p className="font-semibold">Scheduled Date</p>
+        <input
+          className="p-3 w-full rounded-md dark:bg-gray-vdark"
+          type="date"
+          name="due_at"
+          value={new Date(newEntry.due_at).toISOString().split("T")[0]}
+          onChange={handleInputChange}
+        />
+      </div>
       <button
         onClick={(e) => {
           handleSend(e);
