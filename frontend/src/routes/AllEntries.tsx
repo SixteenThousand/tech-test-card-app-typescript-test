@@ -33,7 +33,13 @@ export default function AllEntries() {
               flex flex-col justify-between
             "
           >
-            <h1 className="font-bold text-sm md:text-lg">{entry.title}</h1>
+            <div className="flex flex-row justify-between font-bold text-sm md:text-lg">
+              <h1>{entry.title}</h1>
+              <p className="font-semibold">
+                Scheduled:&nbsp;
+                <time>{new Date(entry.due_at.toString()).toLocaleDateString()}</time>
+              </p>
+            </div>
             <p className="text-center text-lg font-light md:mt-2 md:mb-4 mt-1 mb-3">{entry.description}</p>
             <section className="flex items-center justify-between flex-col md:flex-row pt-2 md:pt-0">
               <div className="flex justify-center">
