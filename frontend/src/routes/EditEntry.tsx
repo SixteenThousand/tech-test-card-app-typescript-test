@@ -1,5 +1,5 @@
 import { ChangeEvent, MouseEvent, useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Entry, EntryContextType } from "../@types/context";
 import { EntryContext } from "../utilities/globalContext";
 
@@ -9,6 +9,7 @@ export default function EditEntry() {
 
   const { updateEntry, entries } = useContext(EntryContext) as EntryContextType;
   const [newEntry, setNewEntry] = useState<Entry>(emptyEntry);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const entry = entries.filter((entry) => entry.id == id)[0];
@@ -22,6 +23,7 @@ export default function EditEntry() {
   };
   const handleSend = (e: MouseEvent<HTMLButtonElement>) => {
     updateEntry(id as string, newEntry);
+    navigate("/");
   };
   return (
     <section
@@ -32,6 +34,17 @@ export default function EditEntry() {
         bg-gray-light dark:bg-gray-dark
       "
     >
+      <Link
+        className="
+          bg-blue-light dark:bg-blue-dark
+          hover:bg-blue-alt dark:hover:bg-blue-alt
+          font-semibold text-white text-3xl
+          px-3 py-1 rounded-md w-fit
+        "
+        to="/"
+      >
+        ↶
+      </Link>
       <div>
         <p className="font-semibold">Title</p>
         <input
