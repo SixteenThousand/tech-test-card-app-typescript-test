@@ -31,7 +31,8 @@ export default function App() {
           className="
             relative m-3
             md:absolute md:top-3 md:right-3 md:m-0
-            bg-gray-light dark:bg-gray-dark
+            bg-blue-light dark:bg-blue-dark
+            hover:bg-blue-alt dark:hover:bg-blue-alt
             text-black dark:text-white
             text-3xl
             h-12 w-12 rounded-md px-1
