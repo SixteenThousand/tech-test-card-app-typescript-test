@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import AllEntries from "./routes/AllEntries";
@@ -7,16 +7,26 @@ import NewEntry from "./routes/NewEntry";
 import { EntryProvider } from "./utilities/globalContext";
 
 export default function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("isDarkMode") ? localStorage.getItem("isDarkMode") : false
+  );
   function toggleDarkMode() {
     setIsDarkMode((currentMode) => {
-      return !currentMode;
+      const newMode = !currentMode;
+      localStorage.setItem("isDarkMode", newMode);
+      return newMode;
     });
   }
 
   return (
     <div className={isDarkMode ? "dark" : "light"}>
-      <section className="bg-white h-screen w-screen dark:bg-gray-vdark">
+      <section
+        className="
+          bg-white dark:bg-gray-vdark
+          text-black dark:text-gray-vlight
+          h-screen w-screen
+        "
+      >
         <Router>
           <EntryProvider>
             <NavBar></NavBar>
@@ -32,10 +42,9 @@ export default function App() {
           onClick={toggleDarkMode}
           className="
             absolute top-3 right-3
-            bg-gray-light
-            dark:bg-gray-dark
-            text-3xl text-black
-            dark:text-gray-vlight
+            bg-gray-light dark:bg-gray-dark
+            text-black dark:text-white
+            text-3xl
             h-12 w-12 rounded-md px-1
             dark:pb-2
           "
