@@ -12,7 +12,7 @@ export default function AllEntries() {
         <h1 className="text-center font-semibold text-2xl m-5">You don't have any card</h1>
         <p className="text-center font-medium text-md">
           Lets{" "}
-          <Link className="text-blue-400 underline underline-offset-1" to="/create">
+          <Link className="text-blue-400 dark:text-blue-300 underline underline-offset-1" to="/create">
             Create One
           </Link>
         </p>
@@ -29,7 +29,6 @@ export default function AllEntries() {
             className="
               bg-gray-light dark:bg-gray-dark
               shadow-md shadow-gray-dark dark:shadow-white
-              dark:text-gray-vlight
               m-3 p-4 rounded
               flex flex-col justify-between
             "
