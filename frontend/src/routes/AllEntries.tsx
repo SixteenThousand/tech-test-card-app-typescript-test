@@ -36,7 +36,8 @@ export default function AllEntries() {
             <div
               className="
                 lg:flex lg:flex-row lg:justify-between
-                font-bold text-sm md:text-lg"
+                font-bold text-sm md:text-lg
+              "
             >
               <h1>{entry.title}</h1>
               <p className="font-semibold break-words">
@@ -45,7 +46,7 @@ export default function AllEntries() {
               </p>
             </div>
             <p className="text-center text-lg font-light md:mt-2 md:mb-4 mt-1 mb-3">{entry.description}</p>
-            <section className="flex items-center justify-between flex-col md:flex-row pt-2 md:pt-0">
+            <section className="flex items-center justify-around lg:justify-between flex-col md:flex-row pt-2 md:pt-0">
               <div className="flex justify-center">
                 <button
                   onClick={() => {
